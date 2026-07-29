@@ -68,19 +68,19 @@ Message: ${formData.message || 'None'}`;
   )}`;
 
   return (
-    <section id="booking" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
+    <section id="booking" className="relative bg-[#0F0F0F] py-[140px] border-t border-[#D4AF37]/10">
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute right-0 top-1/3 h-[550px] w-[550px] rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
-      <div className="luxury-container">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-[720px] mx-auto">
+        <div className="text-center max-w-[620px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37] mb-4"
+            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37] mb-5"
           >
             <Sparkles className="h-4 w-4" />
             Reserve Your Experience
@@ -91,7 +91,7 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15] mb-6"
+            className="font-heading text-[38px] sm:text-[56px] font-bold text-[#F7F7F7] leading-[1.1] text-center mb-5"
           >
             Book An <span className="text-gold-gradient">Appointment</span>
           </motion.h2>
@@ -101,55 +101,56 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[720px] mx-auto mb-[56px]"
+            className="text-[17px] sm:text-[18px] text-[#F7F7F7]/80 leading-relaxed max-w-[620px] mx-auto text-center mb-[60px]"
           >
             Confirm your slot instantly via WhatsApp or fill our luxury appointment concierge form.
           </motion.p>
         </div>
 
-        {/* 2-Card Equal-Height Layout (Desktop: 420px minmax(0, 1fr) Grid | Mobile: Stacked) */}
-        <div className="grid grid-cols-1 min-[900px]:grid-cols-[420px_minmax(0,1fr)] gap-8 min-[900px]:gap-[48px] items-stretch">
+        {/* 2-Card Equal-Height Grid (Desktop: 420px | 1fr with 56px Gap) */}
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-[420px_1fr] gap-8 min-[900px]:gap-[56px] items-stretch">
           {/* LEFT CARD (Instant WhatsApp Booking) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
+            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[40px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
             <div>
-              {/* Title & Icon Header */}
-              <div className="flex items-center gap-3.5 mb-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
-                  <MessageCircle className="h-6 w-6 fill-current" />
+              {/* Header Icon, Title & Subtitle */}
+              <div className="flex flex-col gap-3 mb-2">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
+                  <MessageCircle className="h-7 w-7 fill-current" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-[#F7F7F7]">
+                <h3 className="font-heading text-[28px] min-[900px]:text-[34px] font-bold text-[#F7F7F7] leading-[1.2]">
                   Instant WhatsApp Booking
                 </h3>
+                <p className="text-[16px] min-[900px]:text-[18px] font-medium text-[#D4AF37] leading-snug">
+                  Get an immediate confirmation from our salon manager.
+                </p>
               </div>
 
-              {/* Subtitle */}
-              <p className="text-xs font-semibold text-[#D4AF37] mb-[20px]">
-                Get an immediate confirmation from our salon manager.
-              </p>
+              {/* Divider */}
+              <div className="border-t border-[#D4AF37]/20 my-[24px]" />
 
-              {/* Description */}
-              <p className="text-sm min-[900px]:text-base text-[#F7F7F7]/85 leading-relaxed font-normal mb-[28px]">
+              {/* Description Body */}
+              <p className="text-[17px] text-[#F7F7F7]/85 leading-relaxed font-normal mb-[24px]">
                 Connect directly with our salon manager for instant slot confirmation, custom treatment pricing, and bespoke bridal consultations.
               </p>
 
-              {/* Feature List */}
-              <div className="space-y-3.5 mb-[28px] border-t border-[#D4AF37]/20 pt-6">
+              {/* Benefits Checklist */}
+              <div className="space-y-4 mb-[24px]">
                 {perksList.map((perk) => (
-                  <div key={perk} className="flex items-center gap-3 text-xs text-[#F7F7F7]/90 font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-[#D4AF37] shrink-0" />
+                  <div key={perk} className="flex items-center gap-3 text-sm text-[#F7F7F7]/90 font-medium">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-[#D4AF37] shrink-0" />
                     <span>{perk}</span>
                   </div>
                 ))}
               </div>
 
               {/* Working Hours & Direct Line */}
-              <div className="space-y-3 border-t border-[#D4AF37]/20 pt-6 mb-8">
+              <div className="space-y-3.5 pt-6 border-t border-[#D4AF37]/20 mb-8">
                 <div className="flex items-center gap-3 text-xs text-[#F7F7F7]/80">
                   <Clock className="h-4 w-4 text-[#D4AF37] shrink-0" />
                   <span>Mon – Sun: 9:30 AM – 8:30 PM</span>
@@ -167,7 +168,7 @@ Message: ${formData.message || 'None'}`;
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Instantly on WhatsApp"
-              className="mt-auto w-full h-[56px] min-[900px]:h-[60px] rounded-full font-bold text-sm min-[900px]:text-[15px] bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-[1.03]"
+              className="mt-auto w-full h-[60px] min-h-[60px] rounded-[999px] font-bold text-[16px] tracking-[0.04em] uppercase bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-[1.03]"
             >
               <MessageCircle className="h-6 w-6 fill-current shrink-0" />
               <span>Book Instantly on WhatsApp</span>
@@ -180,28 +181,28 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
+            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[40px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
             <div>
-              {/* Title & Header Icon */}
-              <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-5 mb-8">
+              {/* Title, Subtitle & Calendar Icon */}
+              <div className="flex items-start justify-between border-b border-[#D4AF37]/20 pb-6 mb-8 gap-4">
                 <div>
-                  <h3 className="font-heading text-xl min-[900px]:text-2xl font-bold text-[#F7F7F7]">
+                  <h3 className="font-heading text-[24px] min-[900px]:text-[34px] font-bold text-[#F7F7F7] leading-[1.2]">
                     Request an Appointment
                   </h3>
-                  <p className="text-xs font-semibold text-[#D4AF37] mt-1">
+                  <p className="text-[15px] min-[900px]:text-[18px] font-medium text-[#D4AF37] mt-1.5 leading-snug">
                     Share your preferred date and service. We&apos;ll confirm your booking via WhatsApp.
                   </p>
                 </div>
-                <Calendar className="h-6 w-6 text-[#D4AF37] shrink-0" />
+                <Calendar className="h-7 w-7 text-[#D4AF37] shrink-0 mt-1" />
               </div>
 
-              {/* Form Grid */}
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {/* Form Grid with 28px Spacing */}
+              <form onSubmit={handleFormSubmit} className="space-y-[28px]">
+                <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Full Name *
                     </label>
                     <div className="relative">
@@ -214,14 +215,14 @@ Message: ${formData.message || 'None'}`;
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Ananya Sharma"
-                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                       />
                     </div>
                   </div>
 
                   {/* Phone Number */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Phone Number *
                     </label>
                     <div className="relative">
@@ -234,16 +235,16 @@ Message: ${formData.message || 'None'}`;
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+91 98765 43210"
-                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Email Address */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Email Address
                     </label>
                     <div className="relative">
@@ -255,14 +256,14 @@ Message: ${formData.message || 'None'}`;
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="ananya@example.com"
-                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                       />
                     </div>
                   </div>
 
                   {/* Preferred Service */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Service *
                     </label>
                     <select
@@ -270,7 +271,7 @@ Message: ${formData.message || 'None'}`;
                       aria-label="Preferred Service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 px-4 text-sm text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 px-4 text-[15px] text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                     >
                       {serviceOptions.map((opt) => (
                         <option key={opt} value={opt} className="bg-[#1B1B1B] text-[#F7F7F7]">
@@ -281,10 +282,10 @@ Message: ${formData.message || 'None'}`;
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Preferred Date */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Date
                     </label>
                     <div className="relative">
@@ -295,14 +296,14 @@ Message: ${formData.message || 'None'}`;
                         aria-label="Preferred Date"
                         value={formData.date}
                         onChange={handleInputChange}
-                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                       />
                     </div>
                   </div>
 
                   {/* Preferred Time */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Time
                     </label>
                     <div className="relative">
@@ -314,33 +315,33 @@ Message: ${formData.message || 'None'}`;
                         value={formData.time}
                         onChange={handleInputChange}
                         placeholder="e.g. 11:30 AM"
-                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Message / Special Request */}
+                {/* Message / Special Request (Capped Max Height 120px) */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                  <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                     Message / Special Request
                   </label>
                   <textarea
                     name="message"
-                    rows={3}
+                    rows={2}
                     aria-label="Special Request Message"
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Any specific hair condition details or stylist requests..."
-                    className="w-full min-h-[120px] min-[900px]:min-h-[140px] mt-2 rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-sm text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                    className="w-full max-h-[120px] min-h-[120px] mt-2 rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-[15px] text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                   />
                 </div>
 
-                {/* Submit Gold Button (Matching WhatsApp Button Height) */}
+                {/* Submit Gold Button (60px Height) */}
                 <button
                   type="submit"
                   aria-label="Submit Form and Book via WhatsApp"
-                  className="mt-8 w-full h-[56px] min-[900px]:h-[60px] rounded-full font-bold text-sm min-[900px]:text-[15px] bg-gold-gradient text-[#0F0F0F] flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:scale-[1.03]"
+                  className="mt-8 w-full h-[60px] min-h-[60px] rounded-[999px] font-bold text-[16px] tracking-[0.04em] uppercase bg-gold-gradient text-[#0F0F0F] flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:scale-[1.03]"
                 >
                   <Send className="h-5 w-5 shrink-0" />
                   <span>Submit & Generate WhatsApp Booking</span>
