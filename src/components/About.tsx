@@ -38,20 +38,22 @@ export default function About() {
       <div className="pointer-events-none absolute left-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
 
       <div className="luxury-container">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
-          {/* Left Column: Image */}
+        {/* 12-Column Grid Layout */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Left Column: Image (6 Cols) */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative"
+            className="lg:col-span-6 relative"
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px] border border-[#D4AF37]/30 shadow-[0_30px_70px_rgba(0,0,0,0.9)]">
               <Image
                 src="/images/about-stylist.png"
                 alt="SHYN Signature Salon Master Stylist"
                 fill
+                quality={85}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
@@ -81,25 +83,25 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Concise Narrative */}
+          {/* Right Column: Narrative (6 Cols) */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col justify-center"
+            className="lg:col-span-6 flex flex-col justify-center"
           >
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]">
               <span className="h-[1px] w-8 bg-[#D4AF37]" />
               About SHYN Signature Salon
             </div>
 
-            <h2 className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
+            <h2 className="mt-5 font-heading text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
               Where Beauty Meets <span className="text-gold-gradient">Perfection</span>
             </h2>
 
-            {/* Concise Copy */}
-            <p className="mt-7 max-w-[600px] text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed font-normal">
+            {/* Concise Copy (Strict 680px Limit) */}
+            <p className="mt-6 max-w-[680px] text-[16px] sm:text-[18px] text-[#F7F7F7]/85 leading-relaxed font-normal">
               At <strong className="text-[#D4AF37]">SHYN Signature Salon</strong>, every guest enjoys bespoke beauty rituals delivered by master stylists using premium global formulations in a calm, hygienic sanctuary.
             </p>
 
@@ -114,7 +116,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * idx, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="glass-card p-6 text-left rounded-[20px]"
+                    className="glass-card p-6 text-left rounded-[24px]"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-heading text-3xl font-bold text-gold-gradient">

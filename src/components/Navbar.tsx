@@ -86,13 +86,13 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right: Desktop CTA Button */}
+        {/* Right: Desktop CTA Button (58px Height Standard) */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link
             href="#booking"
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] p-[1px] text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]"
+            className="group relative inline-flex h-[58px] min-h-[58px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] p-[1px] text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]"
           >
-            <span className="inline-flex h-full items-center gap-2 rounded-full bg-[#0F0F0F] px-6 text-[#D4AF37] transition-all duration-300 group-hover:bg-transparent group-hover:text-[#0F0F0F]">
+            <span className="inline-flex h-full items-center gap-2.5 rounded-full bg-[#0F0F0F] px-8 text-[#D4AF37] transition-all duration-300 group-hover:bg-transparent group-hover:text-[#0F0F0F]">
               <Calendar className="h-4 w-4" />
               Book Appointment
             </span>
@@ -153,9 +153,9 @@ export default function Navbar() {
               <Link
                 href="#booking"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-whatsapp w-full text-center"
+                className="btn-whatsapp w-full text-center h-[58px]"
               >
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-5 w-5" />
                 <span>Book Appointment</span>
               </Link>
 

@@ -14,6 +14,16 @@
   --light-grey: #F7F7F7;
   --card-glass: rgba(27, 27, 27, 0.65);
   --border-gold: rgba(212, 175, 55, 0.25);
+  
+  /* Standard Spacing Scale Tokens */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
 }
 
 * {
@@ -41,7 +51,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-playfair), Georgia, serif;
 }
 
-/* Paragraph Max Width Rule (Strict 680px Limit for Optimal Reading Ergonomics) */
+/* Paragraph Max Width Rule (Strict 680px Ergonomic Reading Limit) */
 p, .paragraph-luxury {
   max-width: 680px;
 }
@@ -53,9 +63,9 @@ p, .paragraph-luxury {
   border-radius: 8px;
 }
 
-/* Luxury Layout Containers - Strictly Capped at 1200px */
+/* Single Container Standard - Strictly Capped at 1280px */
 .luxury-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -69,6 +79,14 @@ p, .paragraph-luxury {
   }
 }
 
+@media (min-width: 1024px) {
+  .luxury-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Section Spacing Standard: Desktop 140px, Tablet 100px, Mobile 80px */
 .luxury-section {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -88,7 +106,7 @@ p, .paragraph-luxury {
   }
 }
 
-/* Custom Gold Utilities */
+/* Custom Gold Color Utilities */
 .text-gold {
   color: #D4AF37;
 }
@@ -107,13 +125,13 @@ p, .paragraph-luxury {
   background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
-/* Glassmorphism Cards with 28px radius and subtle luxury border */
+/* Glassmorphism Cards - 24px Radius, 32px Internal Padding Standard */
 .glass-card {
   background: rgba(27, 27, 27, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 28px;
+  border-radius: 24px;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -131,38 +149,10 @@ p, .paragraph-luxury {
   border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-/* Button Standards: 56px / 60px height, equal padding, rounded-full, active/disabled states */
+/* Button Standard: 58px Height, Equal Padding (px-8), Rounded Full (999px) */
 .btn-whatsapp {
-  height: 56px;
-  min-height: 56px;
-  padding-left: 32px;
-  padding-right: 32px;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  background-color: #25D366;
-  color: #FFFFFF;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.btn-whatsapp:hover {
-  background-color: #128C7E;
-  transform: scale(1.03);
-  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
-}
-
-.btn-whatsapp-large {
-  height: 60px;
-  min-height: 60px;
+  height: 58px;
+  min-height: 58px;
   padding-left: 32px;
   padding-right: 32px;
   border-radius: 9999px;
@@ -182,43 +172,15 @@ p, .paragraph-luxury {
   cursor: pointer;
 }
 
-.btn-whatsapp-large:hover {
+.btn-whatsapp:hover {
   background-color: #128C7E;
   transform: scale(1.03);
   box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
 }
 
 .btn-gold {
-  height: 56px;
-  min-height: 56px;
-  padding-left: 32px;
-  padding-right: 32px;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-  color: #0F0F0F;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.btn-gold:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.45);
-  background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
-}
-
-.btn-gold-large {
-  height: 60px;
-  min-height: 60px;
+  height: 58px;
+  min-height: 58px;
   padding-left: 32px;
   padding-right: 32px;
   border-radius: 9999px;
@@ -238,23 +200,23 @@ p, .paragraph-luxury {
   cursor: pointer;
 }
 
-.btn-gold-large:hover {
+.btn-gold:hover {
   transform: scale(1.03);
   box-shadow: 0 16px 40px rgba(212, 175, 55, 0.5);
   background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
 .btn-luxury-secondary {
-  height: 56px;
-  min-height: 56px;
+  height: 58px;
+  min-height: 58px;
   padding-left: 32px;
   padding-right: 32px;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -275,16 +237,16 @@ p, .paragraph-luxury {
   box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
 }
 
-/* Inputs with 56px / 58px height and 16px radius */
+/* Inputs Standard: 58px Height and 16px Border Radius */
 .input-luxury {
-  height: 56px;
-  min-height: 56px;
+  height: 58px;
+  min-height: 58px;
   border-radius: 16px;
   border: 1px solid rgba(212, 175, 55, 0.3);
   background-color: rgba(15, 15, 15, 0.85);
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 14px;
+  font-size: 15px;
   color: #F7F7F7;
   transition: all 0.3s ease;
 }
@@ -295,26 +257,7 @@ p, .paragraph-luxury {
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
 }
 
-.input-luxury-large {
-  height: 58px;
-  min-height: 58px;
-  border-radius: 16px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  background-color: rgba(15, 15, 15, 0.85);
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 14px;
-  color: #F7F7F7;
-  transition: all 0.3s ease;
-}
-
-.input-luxury-large:focus {
-  border-color: #D4AF37;
-  outline: none;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
-}
-
-/* Scrollbar styling */
+/* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -348,21 +291,4 @@ p, .paragraph-luxury {
   width: 32px !important;
   border-radius: 6px !important;
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
-}
-
-/* Luxury Pulse Animation */
-@keyframes goldPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 18px rgba(212, 175, 55, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-  }
-}
-
-.animate-gold-pulse {
-  animation: goldPulse 2.2s infinite;
 }

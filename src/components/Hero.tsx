@@ -23,6 +23,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
+          quality={85}
           className="object-cover scale-105 filter brightness-[0.38] contrast-125"
         />
 
@@ -34,7 +35,7 @@ export default function Hero() {
       {/* Decorative Gold Radial Glow Background Elements */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/15 blur-[150px]" />
 
-      {/* Hero Content Box - Centered Container (1200px max width) */}
+      {/* Hero Content Box - Centered Container (1280px max width) */}
       <div className="luxury-container relative z-10 flex flex-col items-center text-center">
         {/* Rating Badge */}
         <motion.div
@@ -77,17 +78,17 @@ export default function Hero() {
           Luxury Hair • Skin • Beauty | Where Beauty Meets Perfection
         </motion.p>
 
-        {/* Concise Luxury Hero Copy */}
+        {/* Ergonomic Paragraph (Strict 680px Max Width Limit) */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-[650px] text-[18px] lg:text-[22px] text-[#F7F7F7]/90 leading-relaxed font-normal"
+          className="mt-7 max-w-[680px] mx-auto text-[18px] lg:text-[22px] text-[#F7F7F7]/90 leading-relaxed font-normal"
         >
           Experience premier hair styling, Korean scalp hydro therapy, and bespoke luxury beauty in Erode.
         </motion.p>
 
-        {/* HERO CTA BUTTONS - Perfectly Centered & Equal Dimensions */}
+        {/* HERO CTA BUTTONS - Perfectly Centered & Matched 58px Height */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
