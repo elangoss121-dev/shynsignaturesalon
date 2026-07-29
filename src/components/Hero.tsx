@@ -15,29 +15,16 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] pt-20"
     >
-      {/* Background Video / Image Fallback Layer */}
+      {/* Background Video / Luxury Image Fallback Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/hero-bg.png"
-          className="h-full w-full object-cover scale-105 filter brightness-75 contrast-110"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-
-        {/* Ambient Fallback Background Image overlay if video is loading */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/hero-bg.png"
-            alt="SHYN Signature Salon High End Ambience"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
+        <Image
+          src="/images/hero-bg.png"
+          alt="SHYN Signature Salon High End Ambience"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover scale-105 filter brightness-75 contrast-110 animate-pulse duration-[10000ms]"
+        />
 
         {/* Multi-layered Cinematic Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/60 to-[#0F0F0F]/80" />
