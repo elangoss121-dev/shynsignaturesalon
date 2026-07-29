@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Gold Gradient Definition -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF0B9"/>
+      <stop offset="30%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#AA7C11"/>
+      <stop offset="100%" stop-color="#FDF0A6"/>
+    </linearGradient>
+
+    <!-- Path for Circular Text -->
+    <path id="textCircleTop" d="M 80, 250 A 170,170 0 1,1 420,250" fill="none" />
+    <path id="textCircleBottom" d="M 420, 250 A 170,170 0 1,1 80,250" fill="none" />
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="250" cy="250" r="235" fill="none" stroke="url(#goldGradient)" stroke-width="3" opacity="0.85"/>
+  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#goldGradient)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Circular Text -->
+  <text font-family="'Playfair Display', Georgia, serif" font-size="19" font-weight="600" fill="url(#goldGradient)" letter-spacing="4">
+    <textPath href="#textCircleTop" startOffset="50%" text-anchor="middle">
+      SHYN UNISEX SIGNATURE SALON
+    </textPath>
+  </text>
+
+  <text font-family="'Playfair Display', Georgia, serif" font-size="19" font-weight="600" fill="url(#goldGradient)" letter-spacing="4">
+    <textPath href="#textCircleBottom" startOffset="50%" text-anchor="middle">
+      SHYN UNISEX SIGNATURE SALON
+    </textPath>
+  </text>
+
+  <!-- Side Stars -->
+  <text x="65" y="256" font-size="16" fill="url(#goldGradient)" text-anchor="middle">★</text>
+  <text x="435" y="256" font-size="16" fill="url(#goldGradient)" text-anchor="middle">★</text>
+
+  <!-- Central Monogram Monolith (S + Y Interlocking) -->
+  <g transform="translate(250, 250) scale(1.15)">
+    <!-- Y Stem & Left Branch -->
+    <path d="M -42,-65 L -10,0 L -10,65 L 10,65 L 10,0 L 42,-65 L 18,-65 L -0, -22 L -18,-65 Z" fill="url(#goldGradient)"/>
+    <!-- S Curve Overlay -->
+    <path d="M 28,-50 C 38,-35 25,-10 -5,-5 C -35,0 -40,25 -25,45 C -10,65 25,60 38,42 L 24,32 C 15,45 -10,48 -14,35 C -18,22 5,12 28,8 C 50,4 52,-35 28,-50 Z" fill="#0F0F0F" stroke="url(#goldGradient)" stroke-width="5"/>
+    <path d="M 28,-50 C 38,-35 25,-10 -5,-5 C -35,0 -40,25 -25,45 C -10,65 25,60 38,42 L 24,32 C 15,45 -10,48 -14,35 C -18,22 5,12 28,8 C 50,4 52,-35 28,-50 Z" fill="url(#goldGradient)" opacity="0.9"/>
+  </g>
+</svg>
