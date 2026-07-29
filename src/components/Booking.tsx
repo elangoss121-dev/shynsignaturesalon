@@ -109,7 +109,7 @@ Message: ${formData.message || 'None'}`;
 
         {/* 2-Card Equal-Height Layout (Desktop: 420px minmax(0, 1fr) Grid | Mobile: Stacked) */}
         <div className="grid grid-cols-1 min-[900px]:grid-cols-[420px_minmax(0,1fr)] gap-8 min-[900px]:gap-[48px] items-stretch">
-          {/* LEFT CARD (WhatsApp Concierge) - Equal Height via flex & mt-auto pinned button */}
+          {/* LEFT CARD (Instant WhatsApp Booking) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -118,20 +118,20 @@ Message: ${formData.message || 'None'}`;
             className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
             <div>
-              {/* Method Label */}
-              <div className="text-[12px] font-bold uppercase tracking-[2px] text-[#D4AF37] mb-[18px]">
-                METHOD 1 • INSTANT CONCIERGE
-              </div>
-
               {/* Title & Icon Header */}
-              <div className="flex items-center gap-3.5 mb-[18px]">
-                <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
+              <div className="flex items-center gap-3.5 mb-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
                   <MessageCircle className="h-6 w-6 fill-current" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-[#F7F7F7]">
-                  WhatsApp Booking
+                  Instant WhatsApp Booking
                 </h3>
               </div>
+
+              {/* Subtitle */}
+              <p className="text-xs font-semibold text-[#D4AF37] mb-[20px]">
+                Get an immediate confirmation from our salon manager.
+              </p>
 
               {/* Description */}
               <p className="text-sm min-[900px]:text-base text-[#F7F7F7]/85 leading-relaxed font-normal mb-[28px]">
@@ -174,7 +174,7 @@ Message: ${formData.message || 'None'}`;
             </a>
           </motion.div>
 
-          {/* RIGHT CARD (Luxury Booking Form) - Equal Height via flex & matched button height */}
+          {/* RIGHT CARD (Request an Appointment Form) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -183,16 +183,16 @@ Message: ${formData.message || 'None'}`;
             className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
             <div>
-              {/* Method Label */}
-              <div className="text-[12px] font-bold uppercase tracking-[2px] text-[#D4AF37] mb-[18px]">
-                METHOD 2 • FORM REQUEST
-              </div>
-
               {/* Title & Header Icon */}
               <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-5 mb-8">
-                <h3 className="font-heading text-xl min-[900px]:text-2xl font-bold text-[#F7F7F7]">
-                  Custom Appointment Request
-                </h3>
+                <div>
+                  <h3 className="font-heading text-xl min-[900px]:text-2xl font-bold text-[#F7F7F7]">
+                    Request an Appointment
+                  </h3>
+                  <p className="text-xs font-semibold text-[#D4AF37] mt-1">
+                    Share your preferred date and service. We&apos;ll confirm your booking via WhatsApp.
+                  </p>
+                </div>
                 <Calendar className="h-6 w-6 text-[#D4AF37] shrink-0" />
               </div>
 
