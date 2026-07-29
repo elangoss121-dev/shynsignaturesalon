@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Tag, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Tag, CheckCircle2, MessageCircle } from 'lucide-react';
 
 const pricingList = [
   {

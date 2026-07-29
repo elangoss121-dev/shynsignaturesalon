@@ -33,6 +33,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 88px;
+}
+
 html, body {
   background-color: var(--bg-primary);
   color: var(--light-grey);

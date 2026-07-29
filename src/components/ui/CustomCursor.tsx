@@ -14,10 +14,9 @@ export default function CustomCursor() {
       return;
     }
 
-    setIsVisible(true);
-
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {

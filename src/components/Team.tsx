@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Users, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Users, Sparkles } from 'lucide-react';
 
 const masterStylists = [
   {

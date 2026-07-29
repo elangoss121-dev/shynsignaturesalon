@@ -68,7 +68,7 @@ Message: ${formData.message || 'None'}`;
   )}`;
 
   return (
-    <section id="booking" className="relative bg-[#0F0F0F] py-[140px] border-t border-[#D4AF37]/10">
+    <section id="booking" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute right-0 top-1/3 h-[550px] w-[550px] rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
@@ -215,7 +215,7 @@ Message: ${formData.message || 'None'}`;
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Ananya Sharma"
-                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="input-luxury w-full pl-12 pr-4"
                       />
                     </div>
                   </div>
@@ -235,7 +235,7 @@ Message: ${formData.message || 'None'}`;
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+91 98765 43210"
-                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="input-luxury w-full pl-12 pr-4"
                       />
                     </div>
                   </div>
@@ -256,7 +256,7 @@ Message: ${formData.message || 'None'}`;
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="ananya@example.com"
-                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="input-luxury w-full pl-12 pr-4"
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ Message: ${formData.message || 'None'}`;
                       aria-label="Preferred Service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 px-4 text-[15px] text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      className="input-luxury w-full px-4 cursor-pointer"
                     >
                       {serviceOptions.map((opt) => (
                         <option key={opt} value={opt} className="bg-[#1B1B1B] text-[#F7F7F7]">
@@ -296,7 +296,7 @@ Message: ${formData.message || 'None'}`;
                         aria-label="Preferred Date"
                         value={formData.date}
                         onChange={handleInputChange}
-                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="input-luxury w-full pl-12 pr-4 cursor-pointer"
                       />
                     </div>
                   </div>
@@ -315,7 +315,7 @@ Message: ${formData.message || 'None'}`;
                         value={formData.time}
                         onChange={handleInputChange}
                         placeholder="e.g. 11:30 AM"
-                        className="w-full h-[58px] min-h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-[15px] text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                        className="input-luxury w-full pl-12 pr-4"
                       />
                     </div>
                   </div>
@@ -333,7 +333,7 @@ Message: ${formData.message || 'None'}`;
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Any specific hair condition details or stylist requests..."
-                    className="w-full max-h-[120px] min-h-[120px] mt-2 rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-[15px] text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                    className="input-luxury w-full max-h-[120px] min-h-[120px] p-4 placeholder-[#F7F7F7]/40"
                   />
                 </div>
 
