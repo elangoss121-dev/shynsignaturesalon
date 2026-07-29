@@ -34,12 +34,12 @@ const stats = [
 export default function About() {
   return (
     <section id="about" className="relative bg-[#0F0F0F] luxury-section overflow-hidden border-t border-[#D4AF37]/10">
-      {/* Background Subtle Ambient Glow */}
+      {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute left-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
 
       <div className="luxury-container">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
-          {/* Left Column: Large Luxury Image with Rounded Corners 24px */}
+          {/* Left Column: Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -50,14 +50,12 @@ export default function About() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px] border border-[#D4AF37]/30 shadow-[0_30px_70px_rgba(0,0,0,0.9)]">
               <Image
                 src="/images/about-stylist.png"
-                alt="SHYN Signature Salon Stylist Crafting Hair Masterpiece"
+                alt="SHYN Signature Salon Master Stylist"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent opacity-80" />
-
-              {/* Gold Border Highlight Frame */}
               <div className="pointer-events-none absolute inset-4 rounded-[18px] border border-[#D4AF37]/20" />
             </div>
 
@@ -83,7 +81,7 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Narrative Content */}
+          {/* Right Column: Concise Narrative */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,22 +94,17 @@ export default function About() {
               About SHYN Signature Salon
             </div>
 
-            {/* Heading: 48px Desktop / 34px Mobile */}
             <h2 className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
               Where Beauty Meets <span className="text-gold-gradient">Perfection</span>
             </h2>
 
-            {/* Paragraph: Max Width 650px, Gap 28px */}
-            <p className="mt-7 max-w-[650px] text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed font-normal">
-              At <strong className="text-[#D4AF37]">SHYN Signature Salon</strong>, beauty meets luxury. Every guest enjoys personalised beauty experiences delivered by skilled professionals using premium products in a calm and hygienic environment.
+            {/* Concise Copy */}
+            <p className="mt-7 max-w-[600px] text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed font-normal">
+              At <strong className="text-[#D4AF37]">SHYN Signature Salon</strong>, every guest enjoys bespoke beauty rituals delivered by master stylists using premium global formulations in a calm, hygienic sanctuary.
             </p>
 
-            <p className="mt-4 max-w-[650px] text-sm text-[#F7F7F7]/70 leading-relaxed">
-              Located on EVN Road in Erode, we blend international hair care rituals like our signature <strong>Korean Hair Spa</strong> with advanced skincare treatments, precision haircuts, and flawless bridal transformations.
-            </p>
-
-            {/* Statistics Cards Grid: Gap 24px, Cards 32px padding & 24px radius */}
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Statistics Cards Grid */}
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
               {stats.map((stat, idx) => {
                 const IconComponent = stat.icon;
                 return (
@@ -121,7 +114,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * idx, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="glass-card p-7 text-left rounded-[24px]"
+                    className="glass-card p-6 text-left rounded-[20px]"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-heading text-3xl font-bold text-gold-gradient">

@@ -41,9 +41,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-playfair), Georgia, serif;
 }
 
-/* Luxury Layout Containers & Sections */
+/* Luxury Layout Containers - Strictly 1200px Max-Width */
 .luxury-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -112,52 +112,81 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-/* Buttons with 56px height, 36px horizontal padding */
-.btn-luxury-primary {
+/* Button Utilities: 56px height, equal padding, rounded-full */
+.btn-whatsapp {
   height: 56px;
   min-height: 56px;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 32px;
+  padding-right: 32px;
   border-radius: 9999px;
   display: inline-flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-  color: #0F0F0F;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  background-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
 }
 
-.btn-luxury-primary:hover {
+.btn-whatsapp:hover {
+  background-color: #128C7E;
   transform: scale(1.03);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
+}
+
+.btn-gold {
+  height: 56px;
+  min-height: 56px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+  color: #0F0F0F;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.45);
   background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
 .btn-luxury-secondary {
   height: 56px;
   min-height: 56px;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 32px;
+  padding-right: 32px;
   border-radius: 9999px;
   display: inline-flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
   border: 1px solid rgba(212, 175, 55, 0.4);
   background: rgba(27, 27, 27, 0.7);
   color: #F7F7F7;
   backdrop-filter: blur(12px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
 }
 
 .btn-luxury-secondary:hover {
@@ -165,7 +194,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-color: #D4AF37;
   background: #D4AF37;
   color: #0F0F0F;
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
 }
 
 /* Inputs with 56px height and 16px radius */

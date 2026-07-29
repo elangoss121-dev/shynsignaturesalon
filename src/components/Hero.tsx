@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Star, MessageCircle, Phone, ChevronDown, Sparkles } from 'lucide-react';
+import { Star, Phone, ChevronDown, Sparkles, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
   const whatsappUrl = `https://wa.me/916382748121?text=${encodeURIComponent(
@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] pt-28 pb-20 lg:pt-36 lg:pb-28"
+      className="relative flex min-h-[95vh] lg:min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] pt-24 pb-16 lg:pt-28 lg:pb-20"
     >
       {/* Background Luxury Ambient Image Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -23,18 +23,18 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover scale-105 filter brightness-[0.4] contrast-125"
+          className="object-cover scale-105 filter brightness-[0.38] contrast-125"
         />
 
         {/* Multi-layered Cinematic Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/70 to-[#0F0F0F]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/60 to-[#0F0F0F]/85" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0F0F0F_85%)] opacity-90" />
       </div>
 
       {/* Decorative Gold Radial Glow Background Elements */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/15 blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/15 blur-[150px]" />
 
-      {/* Hero Content Box */}
+      {/* Hero Content Box - Centered Container (1200px max width) */}
       <div className="luxury-container relative z-10 flex flex-col items-center text-center">
         {/* Rating Badge */}
         <motion.div
@@ -62,7 +62,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 font-heading text-[42px] lg:text-[72px] font-bold tracking-tight text-[#F7F7F7] leading-[1.1]"
+          className="mt-8 font-heading text-[42px] sm:text-[56px] lg:text-[72px] font-bold tracking-tight text-[#F7F7F7] leading-[1.1]"
         >
           SHYN <span className="text-gold-gradient">SIGNATURE</span> SALON
         </motion.h1>
@@ -77,40 +77,40 @@ export default function Hero() {
           Luxury Hair • Skin • Beauty | Where Beauty Meets Perfection
         </motion.p>
 
-        {/* Descriptive Text: 22px Desktop / 18px Mobile, Max Width 650px, Gap 28px */}
+        {/* Concise Luxury Hero Copy */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-[650px] text-[18px] lg:text-[22px] text-[#F7F7F7]/85 leading-relaxed font-normal"
+          className="mt-7 max-w-[650px] text-[18px] lg:text-[22px] text-[#F7F7F7]/90 leading-relaxed font-normal"
         >
-          Experience premium hair styling, Korean Hair Spa, skincare, bridal beauty and professional grooming in Erode. Delivered in an ultra-luxurious, calm and hygienic sanctuary.
+          Experience premier hair styling, Korean scalp hydro therapy, and bespoke luxury beauty in Erode.
         </motion.p>
 
-        {/* CTAs: Gap 40px from paragraph, Height 56px, Gap between buttons 20px */}
+        {/* HERO CTA BUTTONS - Perfectly Centered & Equal Dimensions */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
+          className="mt-[48px] flex flex-col sm:flex-row items-center justify-center gap-5 w-full max-w-[320px] sm:max-w-none mx-auto"
         >
-          {/* WhatsApp Direct CTA */}
+          {/* WhatsApp Book Appointment Button */}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-luxury-primary w-full sm:w-auto text-[#0F0F0F]"
+            className="btn-whatsapp w-full sm:w-auto transition-transform hover:scale-[1.03]"
           >
-            <MessageCircle className="h-5 w-5 fill-current" />
-            <span>Book on WhatsApp</span>
+            <MessageCircle className="h-5 w-5 fill-current shrink-0" />
+            <span>Book Appointment</span>
           </a>
 
-          {/* Call Now CTA */}
+          {/* Call Now Button */}
           <a
             href="tel:+916382748121"
-            className="btn-luxury-secondary w-full sm:w-auto"
+            className="btn-gold w-full sm:w-auto transition-transform hover:scale-[1.03]"
           >
-            <Phone className="h-5 w-5" />
+            <Phone className="h-5 w-5 shrink-0" />
             <span>Call Now</span>
           </a>
         </motion.div>
@@ -121,7 +121,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center"
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center"
       >
         <Link
           href="#about"
