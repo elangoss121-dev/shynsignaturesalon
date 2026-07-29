@@ -12,8 +12,8 @@ export default function Location() {
   return (
     <section id="location" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
       <div className="luxury-container">
-        {/* Header */}
-        <div className="text-center max-w-[700px] mx-auto">
+        {/* Section Header */}
+        <div className="text-center max-w-[680px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function Location() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
+            className="mt-5 font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
           >
             Location & <span className="text-gold-gradient">Directions</span>
           </motion.h2>
@@ -40,21 +40,21 @@ export default function Location() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 text-base lg:text-lg text-[#F7F7F7]/75 leading-relaxed"
+            className="mt-6 text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[680px] mx-auto"
           >
             Conveniently situated on EVN Road, Periyar Nagar in Erode. Ample parking & private entrance.
           </motion.p>
         </div>
 
-        {/* 2-Column Split Layout */}
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-stretch">
-          {/* Address Details Card */}
+        {/* 12-Column Split Layout */}
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-12 items-stretch">
+          {/* Address Details Card (5 Cols) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card flex flex-col justify-between p-8 sm:p-10 rounded-[24px]"
+            className="glass-card flex flex-col justify-between p-8 sm:p-10 rounded-[24px] lg:col-span-5 h-full"
           >
             <div>
               <div className="flex items-center gap-4">
@@ -116,7 +116,8 @@ export default function Location() {
                 href={mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury-primary w-full text-[#0F0F0F]"
+                aria-label="Open Google Maps Location"
+                className="btn-gold w-full text-[#0F0F0F]"
               >
                 <Navigation className="h-4 w-4" />
                 <span>Open Google Maps</span>
@@ -125,7 +126,8 @@ export default function Location() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <a
                   href="tel:+916382748121"
-                  className="btn-luxury-secondary w-full"
+                  aria-label="Call SHYN Signature Salon"
+                  className="btn-luxury-secondary w-full text-xs"
                 >
                   <Phone className="h-4 w-4" />
                   <span>Call Now</span>
@@ -135,7 +137,8 @@ export default function Location() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-[56px] min-h-[56px] items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#1B1B1B] text-xs font-semibold text-[#25D366] transition-all hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
+                  aria-label="Chat on WhatsApp"
+                  className="btn-whatsapp w-full text-xs"
                 >
                   <MessageCircle className="h-4 w-4 fill-current" />
                   <span>WhatsApp</span>
@@ -144,13 +147,13 @@ export default function Location() {
             </div>
           </motion.div>
 
-          {/* Embedded Google Map Frame */}
+          {/* Embedded Google Map Frame (7 Cols) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative min-h-[480px] overflow-hidden rounded-[24px] border border-[#D4AF37]/40 shadow-2xl"
+            className="lg:col-span-7 relative min-h-[480px] overflow-hidden rounded-[24px] border border-[#D4AF37]/40 shadow-2xl"
           >
             <iframe
               title="SHYN Signature Salon Google Maps Location"

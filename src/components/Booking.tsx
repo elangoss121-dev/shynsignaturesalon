@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Calendar, Clock, User, Phone, Mail, Sparkles, Send } from 'lucide-react';
+import { MessageCircle, Calendar, Clock, User, Phone, Mail, Sparkles, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 const serviceOptions = [
   'Korean Hair Spa',
@@ -13,6 +13,13 @@ const serviceOptions = [
   'Bridal Makeup Package',
   'Men Grooming',
   'Other Luxury Service',
+];
+
+const perksList = [
+  'Instant Manager Slot Confirmation',
+  'Personalised Hair & Scalp Consultation',
+  '100% Sanitised Private Suites',
+  'No Advance Payment Required',
 ];
 
 export default function Booking() {
@@ -62,12 +69,12 @@ Message: ${formData.message || 'None'}`;
 
   return (
     <section id="booking" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
-      {/* Background glow */}
+      {/* Ambient background glow */}
       <div className="pointer-events-none absolute right-0 top-1/3 h-[550px] w-[550px] rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
       <div className="luxury-container">
         {/* Section Header */}
-        <div className="text-center max-w-[700px] mx-auto">
+        <div className="text-center max-w-[680px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +83,7 @@ Message: ${formData.message || 'None'}`;
             className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]"
           >
             <Sparkles className="h-4 w-4" />
-            Reserve Your Luxury Experience
+            Reserve Your Experience
           </motion.div>
 
           <motion.h2
@@ -84,7 +91,7 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
+            className="mt-5 font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
           >
             Book An <span className="text-gold-gradient">Appointment</span>
           </motion.h2>
@@ -94,47 +101,60 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 text-base lg:text-lg text-[#F7F7F7]/75 leading-relaxed"
+            className="mt-6 text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[680px] mx-auto"
           >
-            Select your preferred appointment method below to instantly confirm your slot with our concierge.
+            Confirm your slot instantly via WhatsApp or fill our luxury appointment concierge form.
           </motion.p>
         </div>
 
-        {/* 2-Column Split Layout */}
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-start">
-          {/* Method 1: Instant WhatsApp Card */}
+        {/* 12-Column Grid Layout */}
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-12 items-stretch">
+          {/* Left Column (5 Cols): Luxury Concierge Info & Benefits */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card flex flex-col justify-between p-8 sm:p-10 rounded-[24px] border-2 border-[#D4AF37]/40 shadow-2xl relative overflow-hidden h-full"
+            className="glass-card flex flex-col justify-between p-8 sm:p-10 rounded-[24px] border-2 border-[#D4AF37]/40 shadow-2xl lg:col-span-5 h-full"
           >
-            <div className="absolute top-0 right-0 rounded-bl-[20px] bg-gradient-to-l from-[#D4AF37] to-[#AA7C11] px-5 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#0F0F0F]">
-              Method 1 • Fastest
-            </div>
-
             <div>
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl">
-                <MessageCircle className="h-8 w-8 fill-current" />
+              <div className="flex items-center gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
+                  <MessageCircle className="h-7 w-7 fill-current" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">
+                    Method 1 • Instant
+                  </span>
+                  <h3 className="font-heading text-2xl font-bold text-[#F7F7F7]">
+                    WhatsApp Booking
+                  </h3>
+                </div>
               </div>
 
-              <h3 className="mt-7 font-heading text-2xl font-bold text-[#F7F7F7]">
-                Instant WhatsApp Booking
-              </h3>
-
-              <p className="mt-4 text-base text-[#F7F7F7]/80 leading-relaxed font-normal">
-                Connect directly with our salon manager on WhatsApp for real-time slot availability, price estimates, and custom consultations.
+              <p className="mt-6 text-sm lg:text-base text-[#F7F7F7]/85 leading-relaxed font-normal">
+                Connect directly with our salon manager for instant slot confirmation, custom treatment pricing, and bridal consultations.
               </p>
 
-              <div className="mt-10 space-y-4 border-t border-[#D4AF37]/20 pt-8">
-                <div className="flex items-center gap-3 text-xs text-[#F7F7F7]">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#25D366] animate-ping" />
-                  <span className="font-medium">Instant Response (Mon-Sun: 9:30 AM - 8:30 PM)</span>
+              {/* Perks Checklist */}
+              <div className="mt-8 space-y-3.5 border-t border-[#D4AF37]/20 pt-6">
+                {perksList.map((perk) => (
+                  <div key={perk} className="flex items-center gap-3 text-xs text-[#F7F7F7]/90 font-medium">
+                    <CheckCircle2 className="h-4 w-4 text-[#D4AF37] shrink-0" />
+                    <span>{perk}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Working Hours & Direct Phone */}
+              <div className="mt-8 space-y-3 border-t border-[#D4AF37]/20 pt-6">
+                <div className="flex items-center gap-3 text-xs text-[#F7F7F7]/80">
+                  <Clock className="h-4 w-4 text-[#D4AF37]" />
+                  <span>Mon – Sun: 9:30 AM – 8:30 PM</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-[#D4AF37] font-semibold">
+                <div className="flex items-center gap-3 text-xs text-[#D4AF37] font-semibold">
                   <Phone className="h-4 w-4" />
-                  <span>+91 63827 48121</span>
+                  <span>Direct Line: +91 63827 48121</span>
                 </div>
               </div>
             </div>
@@ -143,28 +163,29 @@ Message: ${formData.message || 'None'}`;
               href={instantWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] h-[56px] px-9 text-sm font-bold text-white shadow-[0_10px_30px_rgba(37,211,102,0.3)] transition-all hover:scale-[1.02]"
+              aria-label="Book Instantly on WhatsApp"
+              className="btn-whatsapp w-full text-center mt-10"
             >
               <MessageCircle className="h-5 w-5 fill-current" />
               <span>Book Instantly on WhatsApp</span>
             </a>
           </motion.div>
 
-          {/* Method 2: Custom Appointment Request Form */}
+          {/* Right Column (7 Cols): Custom Appointment Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card p-8 sm:p-10 rounded-[24px]"
+            className="glass-card p-8 sm:p-10 rounded-[24px] lg:col-span-7"
           >
             <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-5">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">
-                  Method 2
+                  Method 2 • Form Request
                 </span>
                 <h3 className="font-heading text-xl font-bold text-[#F7F7F7] mt-0.5">
-                  Custom Appointment Request Form
+                  Custom Appointment Request
                 </h3>
               </div>
               <Calendar className="h-6 w-6 text-[#D4AF37]" />
@@ -183,6 +204,7 @@ Message: ${formData.message || 'None'}`;
                       type="text"
                       name="fullName"
                       required
+                      aria-label="Full Name"
                       value={formData.fullName}
                       onChange={handleInputChange}
                       placeholder="e.g. Ananya Sharma"
@@ -202,6 +224,7 @@ Message: ${formData.message || 'None'}`;
                       type="tel"
                       name="phone"
                       required
+                      aria-label="Phone Number"
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+91 98765 43210"
@@ -222,6 +245,7 @@ Message: ${formData.message || 'None'}`;
                     <input
                       type="email"
                       name="email"
+                      aria-label="Email Address"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="ananya@example.com"
@@ -237,9 +261,10 @@ Message: ${formData.message || 'None'}`;
                   </label>
                   <select
                     name="service"
+                    aria-label="Preferred Service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="input-luxury w-full mt-2"
+                    className="input-luxury w-full mt-2 cursor-pointer"
                   >
                     {serviceOptions.map((opt) => (
                       <option key={opt} value={opt} className="bg-[#1B1B1B] text-[#F7F7F7]">
@@ -261,9 +286,10 @@ Message: ${formData.message || 'None'}`;
                     <input
                       type="date"
                       name="date"
+                      aria-label="Preferred Date"
                       value={formData.date}
                       onChange={handleInputChange}
-                      className="input-luxury w-full pl-12"
+                      className="input-luxury w-full pl-12 cursor-pointer"
                     />
                   </div>
                 </div>
@@ -278,6 +304,7 @@ Message: ${formData.message || 'None'}`;
                     <input
                       type="text"
                       name="time"
+                      aria-label="Preferred Time"
                       value={formData.time}
                       onChange={handleInputChange}
                       placeholder="e.g. 11:30 AM"
@@ -295,17 +322,19 @@ Message: ${formData.message || 'None'}`;
                 <textarea
                   name="message"
                   rows={3}
+                  aria-label="Special Request Message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Any hair condition details or specific stylist requests..."
-                  className="mt-2 w-full rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/80 p-4 text-sm text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                  placeholder="Any specific hair condition details or stylist requests..."
+                  className="mt-2 w-full rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-sm text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
                 />
               </div>
 
-              {/* Submit Button: Height 56px */}
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="btn-luxury-primary w-full text-[#0F0F0F]"
+                aria-label="Submit Form and Book via WhatsApp"
+                className="btn-gold w-full text-[#0F0F0F]"
               >
                 <Send className="h-4 w-4" />
                 <span>Submit & Generate WhatsApp Booking</span>

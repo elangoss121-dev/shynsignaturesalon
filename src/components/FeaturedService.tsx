@@ -48,15 +48,16 @@ export default function FeaturedService() {
             <Flame className="h-4 w-4" /> Signature Luxury Highlight
           </div>
 
-          <div className="mt-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Content Column */}
-            <div>
-              <h2 className="font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
+          {/* 12-Column Grid Layout */}
+          <div className="mt-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* Content Column (7 Cols) */}
+            <div className="lg:col-span-7">
+              <h2 className="font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
                 The Iconic <span className="text-gold-gradient">Korean Hair Spa</span>
               </h2>
 
-              <p className="mt-7 text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed font-normal">
-                Experience Erode’s most sought-after scalp rejuvenation ritual. Designed to reverse urban scalp stress, eliminate dandruff, and transform dull hair into silky, glass-like hair perfection.
+              <p className="mt-6 text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed max-w-[680px]">
+                Experience Erode’s premier scalp rejuvenation ritual. Designed to reverse scalp stress, eliminate dandruff, and transform dull hair into silky, glass-like hair perfection.
               </p>
 
               {/* Treatment Steps Grid */}
@@ -87,7 +88,8 @@ export default function FeaturedService() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-luxury-primary text-[#0F0F0F]"
+                  aria-label="Book Korean Hair Spa Now"
+                  className="btn-gold text-[#0F0F0F]"
                 >
                   <MessageCircle className="h-5 w-5" />
                   <span>Book Korean Hair Spa Now</span>
@@ -99,14 +101,15 @@ export default function FeaturedService() {
               </div>
             </div>
 
-            {/* Interactive Before/After Visualizer Frame */}
-            <div>
+            {/* Interactive Before/After Visualizer Frame (5 Cols) */}
+            <div className="lg:col-span-5">
               <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[24px] border border-[#D4AF37]/40 shadow-2xl">
                 {/* After Image (Background) */}
                 <Image
                   src="/images/korean-spa.png"
                   alt="Korean Hair Spa Radiant Shiny Result"
                   fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover"
                 />
                 <div className="absolute top-4 right-4 z-10 rounded-full bg-[#0F0F0F]/85 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
@@ -122,6 +125,7 @@ export default function FeaturedService() {
                     src="/images/korean-spa.png"
                     alt="Korean Hair Spa Scalp Treatment Before"
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover filter grayscale contrast-125 brightness-75"
                   />
                   <div className="absolute top-4 left-4 z-10 rounded-full bg-[#0F0F0F]/85 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#F7F7F7] border border-white/20 backdrop-blur-md">
@@ -146,7 +150,7 @@ export default function FeaturedService() {
                   max="100"
                   value={sliderPos}
                   onChange={(e) => setSliderPos(Number(e.target.value))}
-                  aria-label="Before After Slider"
+                  aria-label="Before After Comparison Slider"
                   className="absolute inset-0 z-30 opacity-0 cursor-ew-resize w-full h-full"
                 />
               </div>
