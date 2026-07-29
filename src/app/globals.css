@@ -107,13 +107,13 @@ p, .paragraph-luxury {
   background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
-/* Glassmorphism Cards with 24px radius and 32px internal padding */
+/* Glassmorphism Cards with 28px radius and subtle luxury border */
 .glass-card {
   background: rgba(27, 27, 27, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 28px;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -131,7 +131,7 @@ p, .paragraph-luxury {
   border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-/* Button Standards: 56px height, equal padding, rounded-full, active/disabled states */
+/* Button Standards: 56px / 60px height, equal padding, rounded-full, active/disabled states */
 .btn-whatsapp {
   height: 56px;
   min-height: 56px;
@@ -160,14 +160,32 @@ p, .paragraph-luxury {
   box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
 }
 
-.btn-whatsapp:active {
-  transform: scale(0.98);
+.btn-whatsapp-large {
+  height: 60px;
+  min-height: 60px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
-.btn-whatsapp:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
+.btn-whatsapp-large:hover {
+  background-color: #128C7E;
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
 }
 
 .btn-gold {
@@ -198,14 +216,32 @@ p, .paragraph-luxury {
   background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
-.btn-gold:active {
-  transform: scale(0.98);
+.btn-gold-large {
+  height: 60px;
+  min-height: 60px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+  color: #0F0F0F;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
-.btn-gold:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
+.btn-gold-large:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 100%);
 }
 
 .btn-luxury-secondary {
@@ -239,11 +275,7 @@ p, .paragraph-luxury {
   box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
 }
 
-.btn-luxury-secondary:active {
-  transform: scale(0.98);
-}
-
-/* Inputs with 56px height and 16px radius */
+/* Inputs with 56px / 58px height and 16px radius */
 .input-luxury {
   height: 56px;
   min-height: 56px;
@@ -258,6 +290,25 @@ p, .paragraph-luxury {
 }
 
 .input-luxury:focus {
+  border-color: #D4AF37;
+  outline: none;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+}
+
+.input-luxury-large {
+  height: 58px;
+  min-height: 58px;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background-color: rgba(15, 15, 15, 0.85);
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #F7F7F7;
+  transition: all 0.3s ease;
+}
+
+.input-luxury-large:focus {
   border-color: #D4AF37;
   outline: none;
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);

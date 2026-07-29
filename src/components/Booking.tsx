@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Calendar, Clock, User, Phone, Mail, Sparkles, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, Calendar, Clock, User, Phone, Mail, Sparkles, Send, CheckCircle2 } from 'lucide-react';
 
 const serviceOptions = [
   'Korean Hair Spa',
@@ -74,13 +74,13 @@ Message: ${formData.message || 'None'}`;
 
       <div className="luxury-container">
         {/* Section Header */}
-        <div className="text-center max-w-[680px] mx-auto">
+        <div className="text-center max-w-[720px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]"
+            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37] mb-4"
           >
             <Sparkles className="h-4 w-4" />
             Reserve Your Experience
@@ -91,7 +91,7 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
+            className="font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15] mb-6"
           >
             Book An <span className="text-gold-gradient">Appointment</span>
           </motion.h2>
@@ -101,43 +101,45 @@ Message: ${formData.message || 'None'}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[680px] mx-auto"
+            className="text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[720px] mx-auto mb-[56px]"
           >
             Confirm your slot instantly via WhatsApp or fill our luxury appointment concierge form.
           </motion.p>
         </div>
 
-        {/* 12-Column Grid Layout */}
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-12 items-stretch">
-          {/* Left Column (5 Cols): Luxury Concierge Info & Benefits */}
+        {/* 2-Card Equal-Height Layout (Desktop: 420px minmax(0, 1fr) Grid | Mobile: Stacked) */}
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-[420px_minmax(0,1fr)] gap-8 min-[900px]:gap-[48px] items-stretch">
+          {/* LEFT CARD (WhatsApp Concierge) - Equal Height via flex & mt-auto pinned button */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card flex flex-col justify-between p-8 sm:p-10 rounded-[24px] border-2 border-[#D4AF37]/40 shadow-2xl lg:col-span-5 h-full"
+            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
             <div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
-                  <MessageCircle className="h-7 w-7 fill-current" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">
-                    Method 1 • Instant
-                  </span>
-                  <h3 className="font-heading text-2xl font-bold text-[#F7F7F7]">
-                    WhatsApp Booking
-                  </h3>
-                </div>
+              {/* Method Label */}
+              <div className="text-[12px] font-bold uppercase tracking-[2px] text-[#D4AF37] mb-[18px]">
+                METHOD 1 • INSTANT CONCIERGE
               </div>
 
-              <p className="mt-6 text-sm lg:text-base text-[#F7F7F7]/85 leading-relaxed font-normal">
-                Connect directly with our salon manager for instant slot confirmation, custom treatment pricing, and bridal consultations.
+              {/* Title & Icon Header */}
+              <div className="flex items-center gap-3.5 mb-[18px]">
+                <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl shrink-0">
+                  <MessageCircle className="h-6 w-6 fill-current" />
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-[#F7F7F7]">
+                  WhatsApp Booking
+                </h3>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm min-[900px]:text-base text-[#F7F7F7]/85 leading-relaxed font-normal mb-[28px]">
+                Connect directly with our salon manager for instant slot confirmation, custom treatment pricing, and bespoke bridal consultations.
               </p>
 
-              {/* Perks Checklist */}
-              <div className="mt-8 space-y-3.5 border-t border-[#D4AF37]/20 pt-6">
+              {/* Feature List */}
+              <div className="space-y-3.5 mb-[28px] border-t border-[#D4AF37]/20 pt-6">
                 {perksList.map((perk) => (
                   <div key={perk} className="flex items-center gap-3 text-xs text-[#F7F7F7]/90 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-[#D4AF37] shrink-0" />
@@ -146,200 +148,205 @@ Message: ${formData.message || 'None'}`;
                 ))}
               </div>
 
-              {/* Working Hours & Direct Phone */}
-              <div className="mt-8 space-y-3 border-t border-[#D4AF37]/20 pt-6">
+              {/* Working Hours & Direct Line */}
+              <div className="space-y-3 border-t border-[#D4AF37]/20 pt-6 mb-8">
                 <div className="flex items-center gap-3 text-xs text-[#F7F7F7]/80">
-                  <Clock className="h-4 w-4 text-[#D4AF37]" />
+                  <Clock className="h-4 w-4 text-[#D4AF37] shrink-0" />
                   <span>Mon – Sun: 9:30 AM – 8:30 PM</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-[#D4AF37] font-semibold">
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-4 w-4 shrink-0" />
                   <span>Direct Line: +91 63827 48121</span>
                 </div>
               </div>
             </div>
 
+            {/* Pinned Bottom Green WhatsApp Button */}
             <a
               href={instantWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Instantly on WhatsApp"
-              className="btn-whatsapp w-full text-center mt-10"
+              className="mt-auto w-full h-[56px] min-[900px]:h-[60px] rounded-full font-bold text-sm min-[900px]:text-[15px] bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-[1.03]"
             >
-              <MessageCircle className="h-5 w-5 fill-current" />
+              <MessageCircle className="h-6 w-6 fill-current shrink-0" />
               <span>Book Instantly on WhatsApp</span>
             </a>
           </motion.div>
 
-          {/* Right Column (7 Cols): Custom Appointment Form */}
+          {/* RIGHT CARD (Luxury Booking Form) - Equal Height via flex & matched button height */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card p-8 sm:p-10 rounded-[24px] lg:col-span-7"
+            className="glass-card flex flex-col justify-between p-6 min-[900px]:p-[36px] rounded-[28px] border border-[#D4AF37]/30 shadow-2xl h-full"
           >
-            <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-5">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">
-                  Method 2 • Form Request
-                </span>
-                <h3 className="font-heading text-xl font-bold text-[#F7F7F7] mt-0.5">
+            <div>
+              {/* Method Label */}
+              <div className="text-[12px] font-bold uppercase tracking-[2px] text-[#D4AF37] mb-[18px]">
+                METHOD 2 • FORM REQUEST
+              </div>
+
+              {/* Title & Header Icon */}
+              <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-5 mb-8">
+                <h3 className="font-heading text-xl min-[900px]:text-2xl font-bold text-[#F7F7F7]">
                   Custom Appointment Request
                 </h3>
-              </div>
-              <Calendar className="h-6 w-6 text-[#D4AF37]" />
-            </div>
-
-            <form onSubmit={handleFormSubmit} className="mt-8 space-y-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {/* Full Name */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Full Name *
-                  </label>
-                  <div className="mt-2 relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
-                    <input
-                      type="text"
-                      name="fullName"
-                      required
-                      aria-label="Full Name"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      placeholder="e.g. Ananya Sharma"
-                      className="input-luxury w-full pl-12"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Phone Number *
-                  </label>
-                  <div className="mt-2 relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      aria-label="Phone Number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+91 98765 43210"
-                      className="input-luxury w-full pl-12"
-                    />
-                  </div>
-                </div>
+                <Calendar className="h-6 w-6 text-[#D4AF37] shrink-0" />
               </div>
 
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {/* Email */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Email Address
-                  </label>
-                  <div className="mt-2 relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
-                    <input
-                      type="email"
-                      name="email"
-                      aria-label="Email Address"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="ananya@example.com"
-                      className="input-luxury w-full pl-12"
-                    />
+              {/* Form Grid */}
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* Full Name */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        required
+                        aria-label="Full Name"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        placeholder="e.g. Ananya Sharma"
+                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Phone Number */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Phone Number *
+                    </label>
+                    <div className="relative">
+                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        aria-label="Phone Number"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="+91 98765 43210"
+                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Preferred Service */}
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* Email Address */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Email Address
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
+                      <input
+                        type="email"
+                        name="email"
+                        aria-label="Email Address"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="ananya@example.com"
+                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Preferred Service */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Preferred Service *
+                    </label>
+                    <select
+                      name="service"
+                      aria-label="Preferred Service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 px-4 text-sm text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                    >
+                      {serviceOptions.map((opt) => (
+                        <option key={opt} value={opt} className="bg-[#1B1B1B] text-[#F7F7F7]">
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* Preferred Date */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Preferred Date
+                    </label>
+                    <div className="relative">
+                      <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
+                      <input
+                        type="date"
+                        name="date"
+                        aria-label="Preferred Date"
+                        value={formData.date}
+                        onChange={handleInputChange}
+                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] cursor-pointer focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Preferred Time */}
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                      Preferred Time
+                    </label>
+                    <div className="relative">
+                      <Clock className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
+                      <input
+                        type="text"
+                        name="time"
+                        aria-label="Preferred Time"
+                        value={formData.time}
+                        onChange={handleInputChange}
+                        placeholder="e.g. 11:30 AM"
+                        className="w-full h-[56px] min-[900px]:h-[58px] rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 pl-12 pr-4 text-sm text-[#F7F7F7] focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message / Special Request */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Preferred Service *
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80 mb-[10px]">
+                    Message / Special Request
                   </label>
-                  <select
-                    name="service"
-                    aria-label="Preferred Service"
-                    value={formData.service}
+                  <textarea
+                    name="message"
+                    rows={3}
+                    aria-label="Special Request Message"
+                    value={formData.message}
                     onChange={handleInputChange}
-                    className="input-luxury w-full mt-2 cursor-pointer"
-                  >
-                    {serviceOptions.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#1B1B1B] text-[#F7F7F7]">
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {/* Preferred Date */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Preferred Date
-                  </label>
-                  <div className="mt-2 relative">
-                    <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
-                    <input
-                      type="date"
-                      name="date"
-                      aria-label="Preferred Date"
-                      value={formData.date}
-                      onChange={handleInputChange}
-                      className="input-luxury w-full pl-12 cursor-pointer"
-                    />
-                  </div>
+                    placeholder="Any specific hair condition details or stylist requests..."
+                    className="w-full min-h-[120px] min-[900px]:min-h-[140px] mt-2 rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-sm text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                  />
                 </div>
 
-                {/* Preferred Time */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                    Preferred Time
-                  </label>
-                  <div className="mt-2 relative">
-                    <Clock className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
-                    <input
-                      type="text"
-                      name="time"
-                      aria-label="Preferred Time"
-                      value={formData.time}
-                      onChange={handleInputChange}
-                      placeholder="e.g. 11:30 AM"
-                      className="input-luxury w-full pl-12"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#F7F7F7]/80">
-                  Message / Special Request
-                </label>
-                <textarea
-                  name="message"
-                  rows={3}
-                  aria-label="Special Request Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Any specific hair condition details or stylist requests..."
-                  className="mt-2 w-full rounded-[16px] border border-[#D4AF37]/30 bg-[#0F0F0F]/85 p-4 text-sm text-[#F7F7F7] placeholder-[#F7F7F7]/40 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                aria-label="Submit Form and Book via WhatsApp"
-                className="btn-gold w-full text-[#0F0F0F]"
-              >
-                <Send className="h-4 w-4" />
-                <span>Submit & Generate WhatsApp Booking</span>
-              </button>
-            </form>
+                {/* Submit Gold Button (Matching WhatsApp Button Height) */}
+                <button
+                  type="submit"
+                  aria-label="Submit Form and Book via WhatsApp"
+                  className="mt-8 w-full h-[56px] min-[900px]:h-[60px] rounded-full font-bold text-sm min-[900px]:text-[15px] bg-gold-gradient text-[#0F0F0F] flex items-center justify-center gap-3 shadow-[0_12px_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:scale-[1.03]"
+                >
+                  <Send className="h-5 w-5 shrink-0" />
+                  <span>Submit & Generate WhatsApp Booking</span>
+                </button>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>
