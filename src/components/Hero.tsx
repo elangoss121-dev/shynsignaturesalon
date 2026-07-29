@@ -13,9 +13,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] pt-20"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0F0F0F] pt-28 pb-20 lg:pt-36 lg:pb-28"
     >
-      {/* Background Video / Luxury Image Fallback Layer */}
+      {/* Background Luxury Ambient Image Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/hero-bg.png"
@@ -23,25 +23,25 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover scale-105 filter brightness-75 contrast-110 animate-pulse duration-[10000ms]"
+          className="object-cover scale-105 filter brightness-[0.4] contrast-125"
         />
 
         {/* Multi-layered Cinematic Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/60 to-[#0F0F0F]/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0F0F0F_90%)] opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/70 to-[#0F0F0F]/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0F0F0F_85%)] opacity-90" />
       </div>
 
       {/* Decorative Gold Radial Glow Background Elements */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/15 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/15 blur-[140px]" />
 
       {/* Hero Content Box */}
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 text-center sm:px-6 lg:px-8">
+      <div className="luxury-container relative z-10 flex flex-col items-center text-center">
         {/* Rating Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#1B1B1B]/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex items-center gap-2.5 rounded-full border border-[#D4AF37]/40 bg-[#1B1B1B]/80 px-5 py-2 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.2)]"
         >
           <div className="flex items-center gap-1 text-[#D4AF37]">
             {[...Array(5)].map((_, i) => (
@@ -57,12 +57,12 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Main Title */}
+        {/* Main Title: 72px Desktop / 42px Mobile */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4 }}
-          className="mt-6 font-heading text-4xl font-extrabold tracking-wider text-[#F7F7F7] sm:text-6xl md:text-7xl lg:text-8xl"
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 font-heading text-[42px] lg:text-[72px] font-bold tracking-tight text-[#F7F7F7] leading-[1.1]"
         >
           SHYN <span className="text-gold-gradient">SIGNATURE</span> SALON
         </motion.h1>
@@ -71,46 +71,46 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-3 text-sm font-semibold tracking-[0.3em] uppercase text-[#D4AF37] sm:text-base md:text-lg"
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-4 text-xs sm:text-sm md:text-base font-semibold tracking-[0.35em] uppercase text-[#D4AF37]"
         >
           Luxury Hair • Skin • Beauty | Where Beauty Meets Perfection
         </motion.p>
 
-        {/* Descriptive Text */}
+        {/* Descriptive Text: 22px Desktop / 18px Mobile, Max Width 650px, Gap 28px */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-6 max-w-2xl text-base text-[#F7F7F7]/80 leading-relaxed sm:text-lg"
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-7 max-w-[650px] text-[18px] lg:text-[22px] text-[#F7F7F7]/85 leading-relaxed font-normal"
         >
           Experience premium hair styling, Korean Hair Spa, skincare, bridal beauty and professional grooming in Erode. Delivered in an ultra-luxurious, calm and hygienic sanctuary.
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTAs: Gap 40px from paragraph, Height 56px, Gap between buttons 20px */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-9 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+          transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
         >
           {/* WhatsApp Direct CTA */}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-8 py-4 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(37,211,102,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_30px_rgba(37,211,102,0.5)]"
+            className="btn-luxury-primary w-full sm:w-auto text-[#0F0F0F]"
           >
-            <MessageCircle className="h-5 w-5 fill-current transition-transform group-hover:scale-110" />
+            <MessageCircle className="h-5 w-5 fill-current" />
             <span>Book on WhatsApp</span>
           </a>
 
           {/* Call Now CTA */}
           <a
             href="tel:+916382748121"
-            className="group relative flex items-center justify-center gap-3 rounded-full border border-[#D4AF37]/50 bg-[#1B1B1B]/70 px-8 py-4 text-sm font-semibold text-[#D4AF37] backdrop-blur-md transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0F0F0F] hover:shadow-[0_10px_25px_rgba(212,175,55,0.3)]"
+            className="btn-luxury-secondary w-full sm:w-auto"
           >
-            <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            <Phone className="h-5 w-5" />
             <span>Call Now</span>
           </a>
         </motion.div>
@@ -120,17 +120,17 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center"
       >
         <Link
           href="#about"
           className="group flex flex-col items-center gap-2 text-xs font-medium tracking-widest text-[#D4AF37]/70 transition-colors hover:text-[#D4AF37]"
         >
-          <span className="uppercase text-[10px]">Scroll Down</span>
+          <span className="uppercase text-[10px] tracking-[0.2em]">Scroll Down</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
             className="flex h-8 w-5 items-center justify-center rounded-full border border-[#D4AF37]/40 p-1"
           >
             <ChevronDown className="h-4 w-4 text-[#D4AF37]" />

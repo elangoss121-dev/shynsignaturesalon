@@ -188,15 +188,16 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="relative bg-[#0F0F0F] py-24 sm:py-32 border-t border-[#D4AF37]/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
+      <div className="luxury-container">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-[700px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#D4AF37]"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]"
           >
             <span className="h-[1px] w-6 bg-[#D4AF37]" />
             Signature Services
@@ -207,8 +208,8 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 font-heading text-3xl font-extrabold text-[#F7F7F7] sm:text-4xl md:text-5xl"
+            transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
           >
             Tailored Beauty <span className="text-gold-gradient">Rituals</span>
           </motion.h2>
@@ -217,23 +218,23 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-[#F7F7F7]/70"
+            transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-7 text-base lg:text-lg text-[#F7F7F7]/75 leading-relaxed"
           >
             Explore our curated menu of hair styling, scalp therapies, advanced skincare, and bridal makeovers.
           </motion.p>
         </div>
 
         {/* Category Filters */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-3.5">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+              className={`rounded-full px-7 py-3 text-xs font-semibold uppercase tracking-widest transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#0F0F0F] shadow-[0_0_20px_rgba(212,175,55,0.4)]'
-                  : 'border border-[#D4AF37]/30 bg-[#1B1B1B]/60 text-[#F7F7F7]/80 hover:border-[#D4AF37] hover:text-[#D4AF37]'
+                  ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#0F0F0F] shadow-[0_0_25px_rgba(212,175,55,0.4)] font-bold'
+                  : 'border border-[#D4AF37]/30 bg-[#1B1B1B]/70 text-[#F7F7F7]/80 hover:border-[#D4AF37] hover:text-[#D4AF37]'
               }`}
             >
               {cat}
@@ -241,8 +242,8 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Services Cards Grid */}
-        <motion.div layout className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Services Cards Grid: 2 Columns Desktop / 1 Column Mobile, Gap 32px */}
+        <motion.div layout className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8">
           <AnimatePresence>
             {filteredServices.map((service) => {
               const IconComponent = service.icon;
@@ -250,45 +251,45 @@ export default function Services() {
                 <motion.div
                   key={service.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  className="glass-card group relative flex flex-col justify-between p-6 sm:p-7"
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="glass-card group relative flex flex-col justify-between p-8 rounded-[24px]"
                 >
                   <div>
                     {/* Top Tag & Icon */}
                     <div className="flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#D4AF37]/30 bg-[#1B1B1B] text-[#D4AF37] transition-colors group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0F0F0F]">
-                        <IconComponent className="h-6 w-6" />
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#D4AF37]/30 bg-[#1B1B1B] text-[#D4AF37] transition-colors group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0F0F0F]">
+                        <IconComponent className="h-7 w-7" />
                       </div>
-                      <span className="rounded-full border border-[#D4AF37]/30 bg-[#0F0F0F]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#D4AF37]">
+                      <span className="rounded-full border border-[#D4AF37]/40 bg-[#0F0F0F]/80 px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#D4AF37]">
                         {service.tag}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="mt-5 font-heading text-xl font-bold text-[#F7F7F7] group-hover:text-[#D4AF37] transition-colors">
+                    <h3 className="mt-7 font-heading text-2xl font-bold text-[#F7F7F7] group-hover:text-[#D4AF37] transition-colors">
                       {service.name}
                     </h3>
-                    <p className="mt-1 text-xs font-medium text-[#D4AF37]/80">
+                    <p className="mt-1 text-xs font-semibold text-[#D4AF37]">
                       {service.subtitle}
                     </p>
 
-                    <p className="mt-3 text-xs text-[#F7F7F7]/70 leading-relaxed">
+                    <p className="mt-4 text-sm text-[#F7F7F7]/75 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Booking Link */}
-                  <div className="mt-6 pt-5 border-t border-[#D4AF37]/15">
+                  <div className="mt-8 pt-6 border-t border-[#D4AF37]/15">
                     <a
                       href={getWhatsAppLink(service.name)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#D4AF37]/40 bg-[#1B1B1B] py-2.5 text-xs font-semibold text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0F0F0F]"
+                      className="btn-luxury-secondary w-full h-[52px] min-h-[52px] text-xs"
                     >
-                      <Calendar className="h-3.5 w-3.5" />
+                      <Calendar className="h-4 w-4" />
                       <span>Book {service.name}</span>
                     </a>
                   </div>

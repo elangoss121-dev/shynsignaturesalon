@@ -33,49 +33,50 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-[#0F0F0F] py-24 sm:py-32 overflow-hidden">
+    <section id="about" className="relative bg-[#0F0F0F] luxury-section overflow-hidden border-t border-[#D4AF37]/10">
       {/* Background Subtle Ambient Glow */}
-      <div className="pointer-events-none absolute left-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-[#D4AF37]/10 blur-[130px]" />
+      <div className="pointer-events-none absolute left-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left Column: Luxury Image with Floating Accent Badge */}
+      <div className="luxury-container">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+          {/* Left Column: Large Luxury Image with Rounded Corners 24px */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative lg:col-span-6"
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative"
           >
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl border border-[#D4AF37]/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)] lg:max-w-none">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px] border border-[#D4AF37]/30 shadow-[0_30px_70px_rgba(0,0,0,0.9)]">
               <Image
                 src="/images/about-stylist.png"
                 alt="SHYN Signature Salon Stylist Crafting Hair Masterpiece"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent opacity-80" />
 
               {/* Gold Border Highlight Frame */}
-              <div className="pointer-events-none absolute inset-3 rounded-xl border border-[#D4AF37]/20" />
+              <div className="pointer-events-none absolute inset-4 rounded-[18px] border border-[#D4AF37]/20" />
             </div>
 
             {/* Floating Luxury Experience Seal */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute -bottom-6 -right-2 sm:right-6 flex items-center gap-4 rounded-2xl border border-[#D4AF37]/40 bg-[#1B1B1B]/95 p-4 shadow-2xl backdrop-blur-xl max-w-xs"
+              transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute -bottom-8 -right-2 sm:right-6 flex items-center gap-4 rounded-[20px] border border-[#D4AF37]/40 bg-[#1B1B1B]/95 p-5 shadow-2xl backdrop-blur-xl max-w-xs"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#AA7C11] text-[#0F0F0F] shadow-lg">
-                <ShieldCheck className="h-6 w-6 stroke-[2.5]" />
+              <div className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#AA7C11] text-[#0F0F0F] shadow-lg shrink-0">
+                <ShieldCheck className="h-7 w-7 stroke-[2.5]" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-wider">
+                <p className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
                   Guaranteed Luxury
                 </p>
-                <p className="text-xs text-[#F7F7F7]/80">
+                <p className="text-xs text-[#F7F7F7]/80 mt-0.5">
                   100% Sanitized & Personalised Styling Suites
                 </p>
               </div>
@@ -84,31 +85,33 @@ export default function About() {
 
           {/* Right Column: Narrative Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col justify-center lg:col-span-6"
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col justify-center"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]">
               <span className="h-[1px] w-8 bg-[#D4AF37]" />
               About SHYN Signature Salon
             </div>
 
-            <h2 className="mt-4 font-heading text-3xl font-extrabold text-[#F7F7F7] sm:text-4xl md:text-5xl leading-tight">
+            {/* Heading: 48px Desktop / 34px Mobile */}
+            <h2 className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]">
               Where Beauty Meets <span className="text-gold-gradient">Perfection</span>
             </h2>
 
-            <p className="mt-6 text-base text-[#F7F7F7]/90 leading-relaxed sm:text-lg">
+            {/* Paragraph: Max Width 650px, Gap 28px */}
+            <p className="mt-7 max-w-[650px] text-base lg:text-lg text-[#F7F7F7]/85 leading-relaxed font-normal">
               At <strong className="text-[#D4AF37]">SHYN Signature Salon</strong>, beauty meets luxury. Every guest enjoys personalised beauty experiences delivered by skilled professionals using premium products in a calm and hygienic environment.
             </p>
 
-            <p className="mt-4 text-sm text-[#F7F7F7]/70 leading-relaxed">
+            <p className="mt-4 max-w-[650px] text-sm text-[#F7F7F7]/70 leading-relaxed">
               Located on EVN Road in Erode, we blend international hair care rituals like our signature <strong>Korean Hair Spa</strong> with advanced skincare treatments, precision haircuts, and flawless bridal transformations.
             </p>
 
-            {/* Statistics Cards Grid */}
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
+            {/* Statistics Cards Grid: Gap 24px, Cards 32px padding & 24px radius */}
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {stats.map((stat, idx) => {
                 const IconComponent = stat.icon;
                 return (
@@ -117,19 +120,19 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.2 + idx * 0.1, duration: 0.5 }}
-                    className="glass-card p-4 sm:p-5 text-left"
+                    transition={{ delay: 0.1 * idx, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="glass-card p-7 text-left rounded-[24px]"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-heading text-2xl font-black text-gold-gradient sm:text-3xl">
+                      <span className="font-heading text-3xl font-bold text-gold-gradient">
                         {stat.value}
                       </span>
-                      <IconComponent className="h-5 w-5 text-[#D4AF37]" />
+                      <IconComponent className="h-6 w-6 text-[#D4AF37]" />
                     </div>
-                    <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#F7F7F7]">
+                    <h3 className="mt-3 text-xs font-bold uppercase tracking-wider text-[#F7F7F7]">
                       {stat.label}
                     </h3>
-                    <p className="text-[11px] text-[#F7F7F7]/60 mt-0.5">
+                    <p className="text-[11px] text-[#F7F7F7]/60 mt-1">
                       {stat.sublabel}
                     </p>
                   </motion.div>
