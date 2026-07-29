@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
 
       <div className="luxury-container">
         {/* Section Header */}
-        <div className="text-center max-w-[650px] mx-auto">
+        <div className="text-center max-w-[680px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
+            className="mt-5 font-heading text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
           >
             Why Choose <span className="text-gold-gradient">SHYN Signature</span>
           </motion.h2>
@@ -70,14 +70,14 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-base lg:text-lg text-[#F7F7F7]/75 leading-relaxed"
+            className="mt-6 text-[16px] sm:text-[18px] text-[#F7F7F7]/75 leading-relaxed max-w-[680px] mx-auto"
           >
             World-class expertise paired with unforgettable luxury hospitality.
           </motion.p>
         </div>
 
-        {/* 2-Column Desktop Grid / 1-Column Mobile Grid */}
-        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+        {/* 12-Column Responsive Grid (6 Cols per Card Desktop) */}
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {reasons.map((item, idx) => {
             const IconComponent = item.icon;
             return (
@@ -87,18 +87,18 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * idx, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="glass-card relative flex flex-col justify-between p-8 rounded-[24px]"
+                className="glass-card relative flex flex-col justify-between p-8 rounded-[24px] lg:col-span-6"
               >
                 <div>
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#1B1B1B] to-[#0F0F0F] text-[#D4AF37] shadow-lg">
                     <IconComponent className="h-7 w-7" />
                   </div>
 
-                  <h3 className="mt-6 font-heading text-2xl font-bold text-[#F7F7F7]">
+                  <h3 className="mt-6 font-heading text-[24px] sm:text-[30px] font-bold text-[#F7F7F7]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm text-[#F7F7F7]/70 leading-relaxed">
+                  <p className="mt-3 text-sm text-[#F7F7F7]/70 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function WhyChooseUs() {
                 <div className="mt-8 pt-6 border-t border-[#D4AF37]/15">
                   <ul className="space-y-3">
                     {item.perks.map((perk) => (
-                      <li key={perk} className="flex items-center gap-2.5 text-xs text-[#F7F7F7]/85">
+                      <li key={perk} className="flex items-center gap-2.5 text-xs text-[#F7F7F7]/85 font-medium">
                         <CheckCircle2 className="h-4 w-4 text-[#D4AF37] shrink-0" />
                         <span>{perk}</span>
                       </li>
