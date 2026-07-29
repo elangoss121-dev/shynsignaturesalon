@@ -52,14 +52,14 @@ export default function Navbar() {
           href="#home"
           className="group flex items-center gap-3 transition-transform duration-300 hover:scale-105"
         >
-          <div className="relative h-12 w-12 rounded-full border border-[#D4AF37]/50 p-1 transition-all duration-300 group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+          <div className="relative h-13 w-13 overflow-hidden rounded-full border-2 border-[#D4AF37]/70 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300 group-hover:border-[#D4AF37] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]">
             <Image
-              src="/logo.svg"
-              alt="SHYN Signature Salon Monogram Logo"
-              width={48}
-              height={48}
+              src="/logo.png"
+              alt="SHYN Unisex Signature Salon Official Seal Logo"
+              width={56}
+              height={56}
               priority
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover rounded-full filter contrast-110"
             />
           </div>
           <div className="flex flex-col">

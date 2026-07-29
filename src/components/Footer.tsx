@@ -41,13 +41,13 @@ export default function Footer() {
           {/* Column 1: Brand & Tagline */}
           <div className="lg:col-span-4">
             <Link href="#home" className="flex items-center gap-3">
-              <div className="relative h-12 w-12 rounded-full border border-[#D4AF37]/50 p-1">
+              <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[#D4AF37]/70 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
                 <Image
-                  src="/logo.svg"
-                  alt="SHYN Signature Salon Logo"
-                  width={48}
-                  height={48}
-                  className="h-full w-full object-contain"
+                  src="/logo.png"
+                  alt="SHYN Unisex Signature Salon Logo"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-cover rounded-full filter contrast-110"
                 />
               </div>
               <div className="flex flex-col">
