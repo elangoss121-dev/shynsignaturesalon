@@ -4,6 +4,8 @@ import About from '@/components/About';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Services from '@/components/Services';
 import FeaturedService from '@/components/FeaturedService';
+import Pricing from '@/components/Pricing';
+import Team from '@/components/Team';
 import Gallery from '@/components/Gallery';
 import InstagramFeed from '@/components/InstagramFeed';
 import Reviews from '@/components/Reviews';
@@ -20,6 +22,8 @@ export default function Home() {
       <WhyChooseUs />
       <Services />
       <FeaturedService />
+      <Pricing />
+      <Team />
       <Gallery />
       <InstagramFeed />
       <Reviews />

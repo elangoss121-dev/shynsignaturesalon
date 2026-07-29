@@ -101,14 +101,15 @@ export default function FeaturedService() {
               </div>
             </div>
 
-            {/* Interactive Before/After Visualizer Frame (5 Cols) */}
+            {/* Interactive Before/After Visualizer Frame (5 Cols) with Genuinely Distinct Photos */}
             <div className="lg:col-span-5">
               <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[24px] border border-[#D4AF37]/40 shadow-2xl">
-                {/* After Image (Background) */}
+                {/* AFTER IMAGE (Glossy & Hydrated Result) */}
                 <Image
-                  src="/images/korean-spa.png"
-                  alt="Korean Hair Spa Radiant Shiny Result"
+                  src="/images/korean-spa-after.png"
+                  alt="Korean Hair Spa Radiant Glossy After Result"
                   fill
+                  quality={85}
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover"
                 />
@@ -116,20 +117,21 @@ export default function FeaturedService() {
                   AFTER: Hydrated & Glossy
                 </div>
 
-                {/* Before Image (Clipped Overlay) */}
+                {/* BEFORE IMAGE (Clipped Overlay - Dry & Damaged Hair) */}
                 <div
                   className="absolute inset-0 overflow-hidden"
                   style={{ width: `${sliderPos}%` }}
                 >
                   <Image
-                    src="/images/korean-spa.png"
-                    alt="Korean Hair Spa Scalp Treatment Before"
+                    src="/images/korean-spa-before.png"
+                    alt="Korean Hair Spa Dry Hair Before Treatment"
                     fill
+                    quality={85}
                     sizes="(max-width: 768px) 100vw, 40vw"
-                    className="object-cover filter grayscale contrast-125 brightness-75"
+                    className="object-cover filter contrast-110 brightness-90"
                   />
                   <div className="absolute top-4 left-4 z-10 rounded-full bg-[#0F0F0F]/85 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#F7F7F7] border border-white/20 backdrop-blur-md">
-                    BEFORE: Dull & Dry
+                    BEFORE: Dry & Damaged
                   </div>
                 </div>
 

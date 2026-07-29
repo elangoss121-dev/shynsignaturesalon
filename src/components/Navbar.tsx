@@ -10,10 +10,11 @@ const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'Team', href: '#team' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Reviews', href: '#reviews' },
   { name: 'Visit Us', href: '#location' },
-  { name: 'Contact', href: '#booking' },
 ];
 
 export default function Navbar() {
@@ -72,12 +73,12 @@ export default function Navbar() {
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-sm font-medium tracking-widest text-[#F7F7F7]/80 transition-colors duration-300 hover:text-[#D4AF37] group py-2"
+              className="relative text-xs font-semibold tracking-widest text-[#F7F7F7]/85 transition-colors duration-300 hover:text-[#D4AF37] group py-2"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#D4AF37] to-[#FBF0B9] transition-all duration-300 group-hover:w-full" />
@@ -118,7 +119,7 @@ export default function Navbar() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[995] flex flex-col justify-between bg-[#0F0F0F]/98 px-6 pt-28 pb-10 backdrop-blur-2xl lg:hidden"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               <div className="flex justify-between items-center pb-4 border-b border-[#D4AF37]/20">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
                   Navigation Menu
@@ -133,7 +134,7 @@ export default function Navbar() {
                   key={link.name}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + idx * 0.05, duration: 0.5 }}
+                  transition={{ delay: 0.1 + idx * 0.04, duration: 0.5 }}
                 >
                   <Link
                     href={link.href}
@@ -152,7 +153,7 @@ export default function Navbar() {
               <Link
                 href="#booking"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-luxury-primary w-full text-center"
+                className="btn-whatsapp w-full text-center"
               >
                 <Calendar className="h-4 w-4" />
                 <span>Book Appointment</span>

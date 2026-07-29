@@ -20,7 +20,7 @@ const galleryItems = [
     category: 'Korean Spa',
     title: 'Signature Korean Hair Hydro Spa',
     subtitle: 'Deep Scalp Detox & Hydro Steam',
-    src: '/images/korean-spa.png',
+    src: '/images/korean-spa-after.png',
   },
   {
     id: 3,
@@ -38,17 +38,17 @@ const galleryItems = [
   },
   {
     id: 5,
-    category: 'Korean Spa',
-    title: 'Scalp Therapy Hydro Massage',
-    subtitle: 'Botanical Nourishment Elixir',
-    src: '/images/korean-spa.png',
+    category: 'Hair Crafts',
+    title: 'Dimensional Golden Balayage',
+    subtitle: 'Ammonia-Free Bond Builder Coloring',
+    src: '/images/gallery-balayage.png',
   },
   {
     id: 6,
-    category: 'Ambience',
-    title: 'Private Spa & Treatment Suites',
-    subtitle: 'Hygienic Calm Sanctuary',
-    src: '/images/hero-bg.png',
+    category: 'Korean Spa',
+    title: 'Scalp Detox Before Therapy',
+    subtitle: 'Follicle Unclogging & Steam Prep',
+    src: '/images/korean-spa-before.png',
   },
 ];
 
@@ -79,7 +79,7 @@ export default function Gallery() {
     <section id="gallery" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
       <div className="luxury-container">
         {/* Header */}
-        <div className="text-center max-w-[700px] mx-auto">
+        <div className="text-center max-w-[680px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ export default function Gallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 font-heading text-[34px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
+            className="mt-5 font-heading text-[34px] sm:text-[42px] lg:text-[48px] font-bold text-[#F7F7F7] leading-[1.15]"
           >
             Salon <span className="text-gold-gradient">Gallery</span>
           </motion.h2>
@@ -107,7 +107,7 @@ export default function Gallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 text-base lg:text-lg text-[#F7F7F7]/75 leading-relaxed"
+            className="mt-6 text-base lg:text-lg text-[#F7F7F7]/80 leading-relaxed max-w-[680px] mx-auto"
           >
             Immerse yourself in our aesthetic salon environment, hair transformations, and bridal artistry.
           </motion.p>
@@ -130,7 +130,7 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Masonry Grid with 24px Rounded Corners & 32px Gap */}
+        {/* Masonry Grid with 24px Rounded Corners & Unique Non-Repeating Photos */}
         <motion.div layout className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence>
             {filteredItems.map((item, index) => (
@@ -149,6 +149,7 @@ export default function Gallery() {
                     src={item.src}
                     alt={item.title}
                     fill
+                    quality={85}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -194,6 +195,7 @@ export default function Gallery() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedImageIndex(null)}
+              aria-label="Close Lightbox Modal"
               className="absolute top-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#1B1B1B] text-[#D4AF37] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0F0F0F]"
             >
               <X className="h-6 w-6" />
@@ -202,6 +204,7 @@ export default function Gallery() {
             {/* Prev Button */}
             <button
               onClick={handlePrev}
+              aria-label="Previous Image"
               className="absolute left-6 top-1/2 z-50 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#1B1B1B] text-[#D4AF37] hover:border-[#D4AF37]"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -214,6 +217,8 @@ export default function Gallery() {
                   src={filteredItems[selectedImageIndex].src}
                   alt={filteredItems[selectedImageIndex].title}
                   fill
+                  quality={90}
+                  sizes="100vw"
                   className="object-contain"
                 />
               </div>
@@ -231,6 +236,7 @@ export default function Gallery() {
             {/* Next Button */}
             <button
               onClick={handleNext}
+              aria-label="Next Image"
               className="absolute right-6 top-1/2 z-50 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#1B1B1B] text-[#D4AF37] hover:border-[#D4AF37]"
             >
               <ChevronRight className="h-6 w-6" />

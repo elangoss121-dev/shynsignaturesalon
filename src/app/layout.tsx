@@ -20,7 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shynsignaturesalon.com'),
+  metadataBase: new URL('https://shynsignaturesalon.vercel.app'),
   title: 'SHYN Signature Salon | Luxury Hair, Skin & Korean Spa in Erode',
   description:
     'Experience world-class luxury beauty, precision hair styling, Korean Hair Spa, skin treatments, and bridal makeup at SHYN Signature Salon in Erode. Rated 5.0 Stars on Google.',
@@ -42,11 +42,14 @@ export const metadata: Metadata = {
     address: true,
     email: true,
   },
+  alternates: {
+    canonical: 'https://shynsignaturesalon.vercel.app',
+  },
   openGraph: {
     title: 'SHYN Signature Salon | Luxury Beauty & Korean Hair Spa Erode',
     description:
       'Where Beauty Meets Perfection. Premier unisex salon offering Korean Hair Spa, advanced skin treatments, hair styling & bridal luxury in Erode.',
-    url: 'https://shynsignaturesalon.com',
+    url: 'https://shynsignaturesalon.vercel.app',
     siteName: 'SHYN Signature Salon',
     images: [
       {
@@ -79,13 +82,13 @@ export const metadata: Metadata = {
 
 const jsonLdSchema = {
   '@context': 'https://schema.org',
-  '@type': 'BeautySalon',
+  '@type': 'HairSalon',
   name: 'SHYN Signature Salon',
-  image: 'https://shynsignaturesalon.com/images/hero-bg.png',
-  '@id': 'https://shynsignaturesalon.com',
-  url: 'https://shynsignaturesalon.com',
+  image: 'https://shynsignaturesalon.vercel.app/images/hero-bg.png',
+  '@id': 'https://shynsignaturesalon.vercel.app',
+  url: 'https://shynsignaturesalon.vercel.app',
   telephone: '+916382748121',
-  priceRange: '₹₹₹',
+  priceRange: '₹₹',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'EVN Road, Periyar Nagar',
