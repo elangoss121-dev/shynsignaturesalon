@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import "tailwindcss";
 @import "swiper/css";
 @import "swiper/css/pagination";
@@ -5,6 +6,9 @@
 @import "swiper/css/effect-fade";
 
 :root {
+  color-scheme: dark;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-poppins: 'Poppins', sans-serif;
   --bg-primary: #0F0F0F;
   --bg-secondary: #1B1B1B;
   --gold-primary: #D4AF37;
@@ -26,11 +30,13 @@
   --space-8: 128px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
 }
 
 html {

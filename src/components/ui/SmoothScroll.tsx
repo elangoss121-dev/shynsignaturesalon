@@ -16,17 +16,21 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       wheelMultiplier: 1,
     });
 
+    let animationFrameId: number;
+
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrameId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    animationFrameId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(animationFrameId);
       lenis.destroy();
     };
   }, []);
 
   return <>{children}</>;
 }
+

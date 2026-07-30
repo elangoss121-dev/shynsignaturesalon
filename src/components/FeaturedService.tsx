@@ -152,7 +152,7 @@ export default function FeaturedService() {
                   value={sliderPos}
                   onChange={(e) => setSliderPos(Number(e.target.value))}
                   aria-label="Before After Comparison Slider"
-                  className="absolute inset-0 z-30 opacity-0 cursor-ew-resize w-full h-full"
+                  className="absolute inset-0 z-30 opacity-0 cursor-ew-resize w-full h-full touch-none"
                 />
               </div>
 

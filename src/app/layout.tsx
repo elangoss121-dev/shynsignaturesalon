@@ -1,23 +1,8 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Poppins } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/ui/SmoothScroll';
 import CustomCursor from '@/components/ui/CustomCursor';
 import FloatingActions from '@/components/ui/FloatingActions';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shynsignaturesalon.vercel.app'),
@@ -137,8 +122,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable} dark`}>
+    <html lang="en" className="dark">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}

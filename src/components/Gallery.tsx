@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -61,19 +61,50 @@ export default function Gallery() {
       ? galleryItems
       : galleryItems.filter((item) => item.category === activeCategory);
 
-  const handleNext = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % filteredItems.length);
-    }
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setSelectedImageIndex(null);
   };
 
-  const handlePrev = () => {
-    if (selectedImageIndex !== null) {
+  const handleNext = useCallback(() => {
+    if (selectedImageIndex !== null && filteredItems.length > 0) {
+      setSelectedImageIndex((selectedImageIndex + 1) % filteredItems.length);
+    }
+  }, [selectedImageIndex, filteredItems.length]);
+
+  const handlePrev = useCallback(() => {
+    if (selectedImageIndex !== null && filteredItems.length > 0) {
       setSelectedImageIndex(
         (selectedImageIndex - 1 + filteredItems.length) % filteredItems.length
       );
     }
-  };
+  }, [selectedImageIndex, filteredItems.length]);
+
+  const activeItem =
+    selectedImageIndex !== null && selectedImageIndex < filteredItems.length
+      ? filteredItems[selectedImageIndex]
+      : null;
+
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImageIndex === null) return;
+      if (e.key === 'Escape') setSelectedImageIndex(null);
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImageIndex, handleNext, handlePrev]);
 
   return (
     <section id="gallery" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
@@ -118,7 +149,7 @@ export default function Gallery() {
           {galleryCategories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`rounded-full px-7 py-3 text-xs font-semibold uppercase tracking-widest transition-all duration-300 ${
                 activeCategory === cat
                   ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#0F0F0F] shadow-[0_0_25px_rgba(212,175,55,0.4)] font-bold'
@@ -185,7 +216,7 @@ export default function Gallery() {
 
       {/* Lightbox Modal Popup */}
       <AnimatePresence>
-        {selectedImageIndex !== null && (
+        {activeItem && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -214,8 +245,8 @@ export default function Gallery() {
             <div className="relative max-h-[85vh] max-w-4xl overflow-hidden rounded-[24px] border border-[#D4AF37]/40 bg-[#0F0F0F]">
               <div className="relative aspect-[16/10] w-full min-w-[320px] sm:min-w-[600px] md:min-w-[800px]">
                 <Image
-                  src={filteredItems[selectedImageIndex].src}
-                  alt={filteredItems[selectedImageIndex].title}
+                  src={activeItem.src}
+                  alt={activeItem.title}
                   fill
                   quality={90}
                   sizes="100vw"
@@ -225,10 +256,10 @@ export default function Gallery() {
 
               <div className="border-t border-[#D4AF37]/20 bg-[#1B1B1B] p-5 text-center">
                 <h3 className="font-heading text-lg font-bold text-[#F7F7F7]">
-                  {filteredItems[selectedImageIndex].title}
+                  {activeItem.title}
                 </h3>
                 <p className="text-xs text-[#D4AF37] mt-1">
-                  {filteredItems[selectedImageIndex].subtitle}
+                  {activeItem.subtitle}
                 </p>
               </div>
             </div>

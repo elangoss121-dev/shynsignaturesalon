@@ -60,12 +60,17 @@ Message: ${formData.message || 'None'}`;
     const encodedText = encodeURIComponent(formattedMessage);
     const whatsappUrl = `https://wa.me/${whatsappTargetNumber}?text=${encodedText}`;
 
-    window.open(whatsappUrl, '_blank');
+    const newWindow = window.open(whatsappUrl, '_blank');
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      window.location.href = whatsappUrl;
+    }
   };
 
   const instantWhatsAppUrl = `https://wa.me/${whatsappTargetNumber}?text=${encodeURIComponent(
     'Hello SHYN Signature Salon, I would like to book an instant appointment.'
   )}`;
+
+  const todayStr = new Date().toISOString().split('T')[0];
 
   return (
     <section id="booking" className="relative bg-[#0F0F0F] luxury-section border-t border-[#D4AF37]/10">
@@ -202,12 +207,13 @@ Message: ${formData.message || 'None'}`;
                 <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-fullName" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Full Name *
                     </label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
                       <input
+                        id="booking-fullName"
                         type="text"
                         name="fullName"
                         required
@@ -222,12 +228,13 @@ Message: ${formData.message || 'None'}`;
 
                   {/* Phone Number */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-phone" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Phone Number *
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
                       <input
+                        id="booking-phone"
                         type="tel"
                         name="phone"
                         required
@@ -244,12 +251,13 @@ Message: ${formData.message || 'None'}`;
                 <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Email Address */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-email" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Email Address
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
                       <input
+                        id="booking-email"
                         type="email"
                         name="email"
                         aria-label="Email Address"
@@ -263,10 +271,11 @@ Message: ${formData.message || 'None'}`;
 
                   {/* Preferred Service */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-service" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Service *
                     </label>
                     <select
+                      id="booking-service"
                       name="service"
                       aria-label="Preferred Service"
                       value={formData.service}
@@ -285,14 +294,16 @@ Message: ${formData.message || 'None'}`;
                 <div className="grid grid-cols-1 gap-[28px] sm:grid-cols-2">
                   {/* Preferred Date */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-date" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Date
                     </label>
                     <div className="relative">
                       <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
                       <input
+                        id="booking-date"
                         type="date"
                         name="date"
+                        min={todayStr}
                         aria-label="Preferred Date"
                         value={formData.date}
                         onChange={handleInputChange}
@@ -303,12 +314,13 @@ Message: ${formData.message || 'None'}`;
 
                   {/* Preferred Time */}
                   <div>
-                    <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                    <label htmlFor="booking-time" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                       Preferred Time
                     </label>
                     <div className="relative">
                       <Clock className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D4AF37]" />
                       <input
+                        id="booking-time"
                         type="text"
                         name="time"
                         aria-label="Preferred Time"
@@ -323,10 +335,11 @@ Message: ${formData.message || 'None'}`;
 
                 {/* Message / Special Request (Capped Max Height 120px) */}
                 <div>
-                  <label className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
+                  <label htmlFor="booking-message" className="block text-[13px] font-bold uppercase tracking-[0.08em] text-[#F7F7F7]/80 mb-2.5">
                     Message / Special Request
                   </label>
                   <textarea
+                    id="booking-message"
                     name="message"
                     rows={2}
                     aria-label="Special Request Message"
